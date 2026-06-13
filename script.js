@@ -1,7 +1,4 @@
 // Navigation links
-const servicesSection = document.getElementById('services');
-const servicesLink = document.querySelector('a[href="#services"]');
-const homeLink = document.querySelector('a[href="/"]') || document.querySelector('a[href="index.html"]') || document.querySelector('a[href="tel:+919607736790"]');
 const header = document.querySelector('.navbar') || document.querySelector('header');
 
 // Initialize page state on load.
