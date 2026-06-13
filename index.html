@@ -23,7 +23,7 @@
                 <a href="#services" class="nav-link">Services</a>
                 <a href="projects.html" class="nav-link">Projects</a>
                 <a href="about.html" class="nav-link">About</a>
-                <a href="tel:+919607736790" class="nav-link nav-cta">Call Now</a>
+                <a href="#" class="nav-link nav-cta" data-contact-popup>Contact Us</a>
             </nav>
         </div>
     </header>
@@ -39,7 +39,7 @@
                     </p>
                     <div class="hero-buttons">
                         <a href="#services" class="btn btn-primary">Explore Services</a>
-                        <a href="tel:+919607736790" class="btn btn-secondary">Call 9607736790</a>
+                        <a href="#" class="btn btn-secondary" data-contact-popup>Contact Us</a>
                     </div>
                 </div>
 
@@ -140,7 +140,7 @@
     <div class="container">
         <h2>Ready to Build Something Great?</h2>
         <p>Let's create reliable digital solutions that help your business grow.</p>
-        <a href="tel:+919607736790" class="btn btn-primary">Call 9607736790</a>
+        <a href="#" class="btn btn-primary" data-contact-popup>Contact Us</a>
     </div>
 </section>
     </main>
@@ -152,5 +152,54 @@
     </footer>
 
     <script src="script.js" defer></script>
+
+    <div id="contactPopup" class="contact-popup-overlay" hidden style="display:none; position:fixed; inset:0; z-index:9999; align-items:center; justify-content:center; background:rgba(0,0,0,0.5);">
+      <div class="contact-popup" style="background:#fff; padding:24px; border-radius:12px; max-width:400px; width:90%; position:relative;">
+        <button type="button" class="contact-popup-close" id="contactPopupClose" aria-label="Close">&times;</button>
+        <h2>Contact SONi</h2>
+        <a class="contact-tile" href="tel:+919607736790">
+          <span class="contact-icon">📞</span>
+          <div>
+            <strong>Phone</strong>
+            <span>+91 96077 36790</span>
+          </div>
+        </a>
+
+        <a class="contact-tile" href="mailto:contact@soni.example">
+          <span class="contact-icon">📧</span>
+          <div>
+            <strong>Email</strong>
+            <span>contact@soni.example</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <script>
+window.addEventListener('DOMContentLoaded', function () {
+  const popup = document.getElementById('contactPopup');
+  const closeBtn = document.getElementById('contactPopupClose');
+  const triggers = document.querySelectorAll('[data-contact-popup]');
+
+  triggers.forEach(function (trigger) {
+    trigger.addEventListener('click', function (e) {
+      e.preventDefault();
+      popup.hidden = false;
+      popup.style.display = 'flex';
+    });
+  });
+
+  closeBtn.addEventListener('click', function () {
+    popup.hidden = true;
+    popup.style.display = 'none';
+  });
+
+  popup.addEventListener('click', function (e) {
+    if (e.target === popup) {
+      popup.hidden = true;
+      popup.style.display = 'none';
+    }
+  });
+});
+    </script>
 </body>
 </html>
