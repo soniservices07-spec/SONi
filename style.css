@@ -143,7 +143,7 @@ body.menu-open {
     align-items: center;
     background-image:
         linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.55)),
-        url('/assets/Images/server1.png');
+        url('assets/Images/server1.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
